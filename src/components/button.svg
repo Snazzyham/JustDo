@@ -1,0 +1,32 @@
+<svg width="74" height="74" viewBox="0 0 74 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Add-Todo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-112 -278)" figma:type="canvas">
+<g id="Add-Todo" filter="url(#filter0_d)" figma:type="frame">
+<g id="Ellipse" figma:type="ellipse">
+<use xlink:href="#path0_fill" transform="translate(115 278)" fill="url(#paint0_radial)"/>
+</g>
+<g id="Union" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(129.531 292.531)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="112" y="278" width="74" height="74" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="3" y="6" size="6" spread="0" color="0,0,0,0.25" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="3" dy="6"/>
+<feGaussianBlur stdDeviation="3"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<radialGradient id="paint0_radial" cx="0.5" cy="0.5" r="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-5.8125 118.188 -115.716 -5.69095 91.7643 -25.2483)">
+<stop offset="0" stop-color="#7B16FF"/>
+<stop offset="1" stop-color="#3818E5"/>
+</radialGradient>
+<path id="path0_fill" d="M 62 31C 62 48.1208 48.1208 62 31 62C 13.8792 62 0 48.1208 0 31C 0 13.8792 13.8792 0 31 0C 48.1208 0 62 13.8792 62 31Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 11.625 0L 21.3125 0L 21.3125 11.625L 32.4531 11.625L 32.4531 21.3125L 21.3125 21.3125L 21.3125 32.4531L 11.625 32.4531L 11.625 21.3125L 0 21.3125L 0 11.625L 11.625 11.625L 11.625 0Z"/>
+</defs>
+</svg>
