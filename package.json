@@ -28,6 +28,7 @@
     "react-native-prompt": "^1.0.0",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
+    "redux-offline": "^1.0.1",
     "redux-persist": "^4.5.0",
     "styled-components": "^1.4.4"
   }

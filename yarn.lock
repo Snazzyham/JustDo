@@ -4560,6 +4560,12 @@ redux-logger@^2.7.4:
   dependencies:
     deep-diff "0.3.4"
 
+redux-offline@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/redux-offline/-/redux-offline-1.0.1.tgz#c0bc9a64585cd0f70258fdbb10fb5d5eb6957514"
+  dependencies:
+    redux-persist "^4.5.0"
+
 redux-persist@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-4.5.0.tgz#9730c93c1e3b3782cecf68ae5f4753d65d50c2b7"

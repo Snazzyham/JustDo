@@ -16,11 +16,17 @@ const StyledText = styled.Text`
 `;
 
 export default class App extends React.Component {
-  
+
 
     state = {
-      promptVisible: false
+      promptVisible: false,
+      tasks: [
+        {key: 0, desc: "Build app", completed: false},
+        {key: 1, desc: "Add Redux", completed: false},
+        {key: 2, desc: "Make it pretty", completed: false}
+      ]
     };
+
 
   changePromptState() {
     if(this.state.promptVisible) {
@@ -28,14 +34,26 @@ export default class App extends React.Component {
     } else {
       this.setState({promptVisible:true});
     }
-  
+
   }
-  
+
+  addNewTask(val) {
+    const oldTasks = this.state.tasks;
+    const newTask = {
+      key: this.state.tasks[this.state.tasks.length - 1].key + 1,
+      desc: val,
+      completed: false
+    };
+    oldTasks.push(newTask);
+    this.setState({tasks:oldTasks, promptVisible: false});
+  }
+
   render() {
+
     return (
       <StyledView>
         <Header />
-        <ListView />
+        <ListView tasks={this.state.tasks} />
         <Button onPress={this.changePromptState.bind(this)}/>
 
         <Prompt
@@ -45,9 +63,7 @@ export default class App extends React.Component {
           onCancel={ () => this.setState({
             promptVisible: false
           }) }
-          onSubmit={ (value) => this.setState({
-            promptVisible: false
-          }) }/>
+          onSubmit={ (value) => this.addNewTask(value) }/>
       </StyledView>
     );
   }

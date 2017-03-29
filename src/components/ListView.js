@@ -1,39 +1,31 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, ScrollView, View } from 'react-native';
 import styled from 'styled-components/native';
 import _ from 'lodash';
 
-const StyledView = styled.View`
+const StyledView = styled.ScrollView`
   padding-left: 16;
   padding-right: 16;
+  margin-bottom: 57;
 `
 
 const StyledText = styled.Text`
   font-size: 26;
+  padding-bottom: 10;
+  font-family: monospace;
 `
 const Task = (props) => {
   return (
-    <View>
       <StyledText>{props.description}</StyledText>
-    </View>
   )
 };
 
 
 class ListView extends React.Component {
 
-  state = {
-    tasks: [
-      {desc: "something", key: 1},
-      {desc: "something else", key: 2}
-    ]
-  };
-
-
-
   render() {
 
-    const tasks = _.map(this.state.tasks, x => <Task key={x.key} description={x.desc} />)
+    const tasks = _.map(this.props.tasks, x => <Task key={x.key} description={x.desc} />)
     return (
       <StyledView>
         {tasks}
