@@ -38,7 +38,6 @@ class App extends React.Component {
       this.setState({promptVisible:false});
     } else {
       this.setState({promptVisible:true});
-      console.log(this.state);
     }
 
   }

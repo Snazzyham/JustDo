@@ -23,7 +23,7 @@ const Task = (props) => {
   return (
     <TodoContainer>
       <StyledText>{props.description} </StyledText>
-      <CheckBox completed={props.isCompleted}/>
+      <CheckBox completed={props.isCompleted} onPress={props.onTodoClick}/>
     </TodoContainer>
   )
 };
@@ -32,12 +32,12 @@ const Task = (props) => {
 class ListView extends React.Component {
 
   componentDidMount() {
-
+    console.log(this.props);
   }
 
   render() {
 
-    const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed}/>)
+    const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed} onTodoClick={() => this.props.toggleTodo(x.id)}/>)
     return (
       <StyledView>
         {tasks}
