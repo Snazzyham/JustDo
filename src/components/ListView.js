@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, ScrollView, View } from 'react-native';
 import styled from 'styled-components/native';
 import _ from 'lodash';
+import CheckBox from './CheckBox';
 
 const StyledView = styled.ScrollView`
   padding-left: 16;
@@ -14,18 +15,29 @@ const StyledText = styled.Text`
   padding-bottom: 10;
   font-family: monospace;
 `
+const TodoContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`
 const Task = (props) => {
   return (
-      <StyledText>{props.description}</StyledText>
+    <TodoContainer>
+      <StyledText>{props.description} </StyledText>
+      <CheckBox completed={props.isCompleted}/>
+    </TodoContainer>
   )
 };
 
 
 class ListView extends React.Component {
 
+  componentDidMount() {
+
+  }
+
   render() {
 
-    const tasks = _.map(this.props.tasks, x => <Task key={x.key} description={x.desc} />)
+    const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed}/>)
     return (
       <StyledView>
         {tasks}

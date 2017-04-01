@@ -11,7 +11,7 @@ Adding these notes here so I remember;
 
 aka
 
-- convert state to store [ ]
+- convert state to store [x]
 - be able to delete objects [ ]
 - be able to view completed items [ ]
 - persist store on device [ ]
