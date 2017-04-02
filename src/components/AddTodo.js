@@ -7,13 +7,7 @@ const mapStateToProps = (state) => {
   return { todos: state.todos }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onEventClick: (val) => {
-//       dispatch(addTodo(val))
-//     }
-//   }
-// }
+
 
 class AddTodo extends React.Component {
 
@@ -28,7 +22,10 @@ class AddTodo extends React.Component {
         placeholder="Start typing"
         visible={this.props.isHidden}
         onCancel={this.props.onEvent }
-        onSubmit={(value) => this.props.addTodo(value)}/>
+        onSubmit={(value) =>
+          this.props.addTodo(value) && this.props.onEvent()
+        }
+        />
     );
   }
 }

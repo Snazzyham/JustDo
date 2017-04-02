@@ -33,8 +33,22 @@ const Task = (props) => {
 class ListView extends React.Component {
 
   componentDidMount() {
-    console.log(this.props);
+
   }
+
+  // changeVisible(status){
+  //   switch (status) {
+  //     case "completed":
+  //       this.props.setVisibilityFilter('SHOW_COMPLETED');
+  //       break;
+  //     case "all":
+  //       this.props.setVisibilityFilter('SHOW_ALL');
+  //       break;
+  //     case "active":
+  //       this.props.setVisibilityFilter('SHOW_ACTIVE');
+  //       break;
+  //   }
+  // }
 
   render() {
 
