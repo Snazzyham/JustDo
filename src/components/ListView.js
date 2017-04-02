@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, View } from 'react-native';
+import {Text, ScrollView, View, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import _ from 'lodash';
 import CheckBox from './CheckBox';
@@ -14,6 +14,7 @@ const StyledText = styled.Text`
   font-size: 26;
   padding-bottom: 10;
   font-family: monospace;
+  textDecorationLine: ${props => props.completed ? 'line-through' : 'none'};
 `
 const TodoContainer = styled.View`
   flex-direction: row;
@@ -22,7 +23,7 @@ const TodoContainer = styled.View`
 const Task = (props) => {
   return (
     <TodoContainer>
-      <StyledText>{props.description} </StyledText>
+      <StyledText completed={props.isCompleted}>{props.description} </StyledText>
       <CheckBox completed={props.isCompleted} onPress={props.onTodoClick}/>
     </TodoContainer>
   )
@@ -38,10 +39,14 @@ class ListView extends React.Component {
   render() {
 
     const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed} onTodoClick={() => this.props.toggleTodo(x.id)}/>)
+
+
     return (
-      <StyledView>
-        {tasks}
-      </StyledView>
+      <View>
+        <StyledView>
+          {tasks}
+        </StyledView>
+      </View>
     );
   }
 };
