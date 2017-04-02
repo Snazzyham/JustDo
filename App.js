@@ -1,15 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
 import Header from './src/components/Header';
 import styled from 'styled-components/native';
 import Button from './src/components/Button';
 //import Prompt from 'react-native-prompt';
-import { createStore } from 'redux';
+import { compose, createStore } from 'redux';
 import todoApp from './src/reducers';
 import { Provider, connect } from 'react-redux';
 import { addTodo } from './src/actions/'
 import VisibleTodoList from './src/components/VisibleTodoList';
 import AddTodo from './src/components/AddTodo';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
 
 const StyledView = styled.View`
@@ -20,17 +21,15 @@ const StyledText = styled.Text`
 
 `;
 
+const store = createStore(todoApp, undefined, compose(autoRehydrate()));
+const persistor = persistStore(store, {storage: AsyncStorage});
+
 class App extends React.Component {
 
 
-    state = {
-      promptVisible: false,
-      // tasks: [
-      //   {key: 0, desc: "Build app", completed: false},
-      //   {key: 1, desc: "Add Redux", completed: false},
-      //   {key: 2, desc: "Make it pretty", completed: false}
-      // ]
-    };
+  state = {
+    promptVisible: false,
+  };
 
 
   changePromptState() {
@@ -42,25 +41,10 @@ class App extends React.Component {
 
   }
 
-  componentDidMount() {
-    // console.log(this.state);
-  }
-
-  //
-  // addNewTask(val) {
-  //   const oldTasks = this.state.tasks;
-  //   const newTask = {
-  //     key: this.state.tasks[this.state.tasks.length - 1].key + 1,
-  //     desc: val,
-  //     completed: false
-  //   };
-  //   oldTasks.push(newTask);
-  //   this.setState({tasks:oldTasks, promptVisible: false});
-  // }
 
   render() {
     return (
-      <Provider store={createStore(todoApp)}>
+      <Provider store={store} persistor={persistor}>
       <StyledView>
         <Header />
         <VisibleTodoList />

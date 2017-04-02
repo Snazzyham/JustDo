@@ -1,5 +1,12 @@
 {
   "expo": {
-    "sdkVersion": "15.0.0"
+    "sdkVersion": "15.0.0",
+    "name": "JustDo",
+    "icon": "./src/justdo-icon.png",
+    "version": "0.0.3",
+    "slug": "justdo",
+    "android": {
+      "package": "com.snazzyham.justdo"
+    }
   }
 }
