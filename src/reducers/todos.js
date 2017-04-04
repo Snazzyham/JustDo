@@ -31,6 +31,15 @@ const todos = (state = [], action) => {
       return state.map(t =>
         todo(t, action)
       )
+
+    case 'DELETE_TODO': {
+      const newState = Object.assign([], state);
+      const indexOfTodoToDelete = state.findIndex(todo => {
+        return todo.id == action.id
+      })
+      newState.splice(indexOfTodoToDelete, 1);
+      return newState;
+    }
     default:
       return state
   }

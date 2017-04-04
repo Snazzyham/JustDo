@@ -11,6 +11,7 @@ import { addTodo } from './src/actions/'
 import VisibleTodoList from './src/components/VisibleTodoList';
 import AddTodo from './src/components/AddTodo';
 import {persistStore, autoRehydrate} from 'redux-persist';
+import LinkView from './src/components/LinkView';
 
 
 const StyledView = styled.View`
@@ -47,6 +48,7 @@ class App extends React.Component {
       <Provider store={store} persistor={persistor}>
       <StyledView>
         <Header />
+        <LinkView />
         <VisibleTodoList />
         <AddTodo onEvent={this.changePromptState.bind(this)} isHidden={this.state.promptVisible}/>
         <Button onPress={this.changePromptState.bind(this)}/>

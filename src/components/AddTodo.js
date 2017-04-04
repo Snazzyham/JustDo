@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 class AddTodo extends React.Component {
 
   componentDidMount() {
-    console.log(this.props);
+
   }
 
   render() {

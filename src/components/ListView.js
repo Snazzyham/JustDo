@@ -7,7 +7,7 @@ import CheckBox from './CheckBox';
 const StyledView = styled.ScrollView`
   padding-left: 16;
   padding-right: 16;
-  margin-bottom: 57;
+  margin-bottom: 110;
 `
 
 const StyledText = styled.Text`
@@ -23,7 +23,7 @@ const TodoContainer = styled.View`
 const Task = (props) => {
   return (
     <TodoContainer>
-      <StyledText completed={props.isCompleted}>{props.description} </StyledText>
+      <StyledText completed={props.isCompleted} onLongPress={props.deleteTodo}>{props.description} </StyledText>
       <CheckBox completed={props.isCompleted} onPress={props.onTodoClick}/>
     </TodoContainer>
   )
@@ -52,15 +52,15 @@ class ListView extends React.Component {
 
   render() {
 
-    const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed} onTodoClick={() => this.props.toggleTodo(x.id)}/>)
+    const tasks = _.map(this.props.todos, x => <Task key={x.id} description={x.text} isCompleted={x.completed} onTodoClick={() => this.props.toggleTodo(x.id)} deleteTodo={() => this.props.deleteTodo(x.id)}/>)
 
 
     return (
-      <View>
+
+
         <StyledView>
           {tasks}
         </StyledView>
-      </View>
     );
   }
 };

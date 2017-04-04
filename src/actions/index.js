@@ -1,4 +1,4 @@
-let nextTodoId = Math.floor(Math.random() * 1000000) + 1  
+let nextTodoId = Math.floor(Math.random() * 1000000) + 1
 export const addTodo = (text) => {
   return {
     type: 'ADD_TODO',
@@ -6,6 +6,13 @@ export const addTodo = (text) => {
     text
   };
 };
+
+export const deleteTodo = (id) => {
+  return {
+    type: 'DELETE_TODO',
+    id
+  }
+}
 
 export const setVisibilityFilter = (filter) => {
   return {
