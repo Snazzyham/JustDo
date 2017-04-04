@@ -11,8 +11,10 @@ const StyledView = styled.ScrollView`
 `
 
 const StyledText = styled.Text`
-  font-size: 26;
+  font-size: 21;
+  flexWrap: wrap;
   padding-bottom: 10;
+  max-width: 273;
   font-family: monospace;
   textDecorationLine: ${props => props.completed ? 'line-through' : 'none'};
 `
@@ -35,20 +37,6 @@ class ListView extends React.Component {
   componentDidMount() {
 
   }
-
-  // changeVisible(status){
-  //   switch (status) {
-  //     case "completed":
-  //       this.props.setVisibilityFilter('SHOW_COMPLETED');
-  //       break;
-  //     case "all":
-  //       this.props.setVisibilityFilter('SHOW_ALL');
-  //       break;
-  //     case "active":
-  //       this.props.setVisibilityFilter('SHOW_ACTIVE');
-  //       break;
-  //   }
-  // }
 
   render() {
 

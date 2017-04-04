@@ -7,7 +7,7 @@ const CheckBox = (props) => {
       return (
       <TouchableOpacity onPress={props.onPress}>
         <Image
-          style={{width:36, height:36}}
+          style={{width:24, height:24}}
           source={require('./Rectangle.png')}
         />
       </TouchableOpacity>
@@ -16,7 +16,7 @@ const CheckBox = (props) => {
     return (
       <TouchableOpacity onPress={props.onPress}>
         <Image
-          style={{width:36, height:36}}
+          style={{width:24, height:24}}
           source={require('./Done.png')}
         />
       </TouchableOpacity>
