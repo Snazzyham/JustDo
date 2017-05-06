@@ -48,8 +48,12 @@
           "text": "GitHub"
         },
         {
-          "href": "https://npmjs.com/package/justdo",
-          "text": "npm"
+          "href": "https://twitter.com/snazzyham",
+          "text": "Twitter"
+        },
+        {
+          "href": "http://snazzyham.com",
+          "text": "About"
         }
       ]
     },
@@ -80,16 +84,7 @@
     },
     {
       "component": "footer",
-      "links": [
-        {
-          "href": "https://github.com/Snazzyham/JustDo",
-          "text": "GitHub"
-        },
-        {
-          "href": "https://github.com/Snazzyham",
-          "text": "Snazzyham"
-        }
-      ]
+      "links": []
     }
   ]
 }
